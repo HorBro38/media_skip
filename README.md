@@ -13,7 +13,7 @@ Media Skip supports the following attributes:
 
 `hold_time` - This is the length of time the player will have to press and hold the button this many seconds to skip the screen.  This is a float, the default is `2.0`.
 
-`show_time` - This is the length of time the "skip" screen will show over the media when initially shown.  If the user does not interact with it, it will go away after this many seconds.  This is a float, the default is `2.0`.
+`show_time` - This is the length of time the "skip" screen will show over the media when initially shown.  If the user does not interact with it, it will hide after this many seconds.  This is a float, the default is `2.0`.
 
 ## Terms of Use
 Feel free to use this as you desire, credit is not necessary but always appreciated.
