@@ -19,7 +19,7 @@ Media Skip supports the following attributes:
 
 `align` - Lets you manually set the alignment of where the skip text and icons appear.  This is a tuple of floats (x,y), the default is `(0.95,0.95)`.
 
-`pos` - Lets you set specific pixel positions for where the skip text and icons appear.  This will override the align settings.  This is a tuple integers, the default is `None`.
+`pos` - Lets you set specific pixel positions for where the skip text and icons appear.  This will override the align settings (if used).  This is a tuple of integers, the default is `None`.
 
 ## Terms of Use
 Feel free to use this as you desire, credit is not necessary but always appreciated.
