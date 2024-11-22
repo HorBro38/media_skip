@@ -6,7 +6,7 @@ This Project is a drop in library for adding an easy way to skip movies (and mus
 ## How to Use
 It is designed for you to drag and drop the folder into your ~/game/ folder.  To invoke this use the following:
 
-`call screen skip_media("images/movie_name.webm")`
+`call screen media_skip("images/movie_name.webm")`
 
 ## Attributes
 Media Skip supports the following attributes:
