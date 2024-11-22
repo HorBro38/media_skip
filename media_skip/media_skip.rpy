@@ -5,13 +5,21 @@
 ###############################################################################
 # This file contains code for adding an easy way to skip movies (and music) in
 # Ren'Py. It is designed for you to drag and drop the folder into your ~/game/
-# folder.  If you decide to place it elsewhere, you will need do update the path
-# for some of the image files.  To invoke this use the following:
+# folder.  To invoke this use the following:
 #
 # call screen skip_media("images/movie_name.webm")
 #
-# Many thanks to Feniks (feniksdev.itch.io / feniksdev.com) for their assistance
-# on this, without them this would not work nearly as well.
+# Media Skip supports the following attributes:
+#
+# hold_time - This is the length of time the player will have to press and hold
+# the button this many seconds to skip the screen. This is a float, the default
+# is 2.0.
+#
+# show_time - This is the length of time the "skip" screen will show over the
+# media when initially shown. If the user does not interact with it, it will hide
+# after this many seconds. This is a float, the default is 2.0.
+#
+# Many thanks to Feniks for their assistance (https://feniksdev.com)
 #
 # Mouse Button Icons by GreatDocBrown (https://greatdocbrown.itch.io/gamepad-ui)
 #
