@@ -26,6 +26,10 @@
 # align - Lets you manually set the alignment of where the skip text and icons
 # appear.  This is a tuple of floats (x,y), the default is (0.95,0.95).
 #
+# pos - Lets you set specific pixel positions for where the skip text and icons
+# appear.  This will override the align settings.  This is a tuple integers, the
+# default is None.
+#
 # Many thanks to Feniks for their assistance (https://feniksdev.com)
 #
 # Mouse Button Icons by GreatDocBrown (https://greatdocbrown.itch.io/gamepad-ui)
@@ -33,7 +37,7 @@
 # Feel free to contact me on Discord @ HB38
 ###############################################################################
 
-screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95)):
+screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95),pos=None):
 
   default the_media = Movie(play="{}".format(name), channel='mskip')
 
@@ -61,7 +65,10 @@ screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0
   showif show_skip:
 
     vbox:
-      align align
+      if pos:
+        pos pos
+      else:
+        align align
       # Places this in the bottom right corner
 
 ## If using Fenik's circular bars (https://feniksdev.itch.io/circular-bar-for-renpy) you can use this code and the included images to get them to work together:
