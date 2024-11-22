@@ -15,6 +15,10 @@ Media Skip supports the following attributes:
 
 `show_time` - This is the length of time the "skip" screen will show over the media when initially shown.  If the user does not interact with it, it will hide after this many seconds.  This is a float, the default is `2.0`.
 
+`override_length` - You can use this attribute to manually set the time the skip screen will display, if you don't want to automatically get it from the media.  This is a float, the default is `None`.
+
+`align` - Lets you manually set the alignment of where the skip text and icons appear.  This is a tuple of floats (x,y), the default is `(0.95,0.95)`.
+
 ## Terms of Use
 Feel free to use this as you desire, credit is not necessary but always appreciated.
 
