@@ -19,6 +19,13 @@
 # media when initially shown. If the user does not interact with it, it will hide
 # after this many seconds. This is a float, the default is 2.0.
 #
+# override_length - You can use this attribute to manually set the time the skip
+# screen will display, if you don't want to automatically get it from the media.
+# This is a float, the default is None.
+#
+# align - Lets you manually set the alignment of where the skip text and icons
+# appear.  This is a tuple of floats (x,y), the default is (0.95,0.95).
+#
 # Many thanks to Feniks for their assistance (https://feniksdev.com)
 #
 # Mouse Button Icons by GreatDocBrown (https://greatdocbrown.itch.io/gamepad-ui)
@@ -26,13 +33,15 @@
 # Feel free to contact me on Discord @ HB38
 ###############################################################################
 
-screen media_skip(name,hold_time=2.0,show_time=2.0):
+screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95)):
 
   default the_media = Movie(play="{}".format(name), channel='mskip')
 
   default media_length = renpy.music.get_duration(channel='mskip')
   # Keep re-checking to get the length of the movie
-  if not media_length:
+  if override_length:
+    timer override_length action Return()
+  elif not media_length:
     timer 1.0/60.0 action SetScreenVariable('media_length',
       renpy.music.get_duration(channel='mskip')) repeat True
   else:
@@ -52,7 +61,7 @@ screen media_skip(name,hold_time=2.0,show_time=2.0):
   showif show_skip:
 
     vbox:
-      align (0.95, 0.95)
+      align align
       # Places this in the bottom right corner
 
 ## If using Fenik's circular bars (https://feniksdev.itch.io/circular-bar-for-renpy) you can use this code and the included images to get them to work together:
@@ -84,7 +93,7 @@ screen media_skip(name,hold_time=2.0,show_time=2.0):
 #       # The text for the skip button, customize to fit the rest of the theme of your game
 
 # If using Fenik's circular bars (see above), you can comment out/delete the following block:
-     hbox:
+      hbox:
        spacing 20
        if held:
          image "media_skip/mouse_2.webp"
@@ -94,9 +103,9 @@ screen media_skip(name,hold_time=2.0,show_time=2.0):
          # The left mouse button being released graphic
        text _("Skip") yalign 0.5
        # The text for the skip button, customize to fit the rest of the theme of your game
-     bar xysize (150,15) value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
+      bar xysize (150,15) value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
 
-     at transform:
+      at transform:
        # This transform gives the fade in and out effect as it appears and disappears
        on start, appear:
          alpha 0.0
