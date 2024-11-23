@@ -7,7 +7,7 @@
 # Ren'Py. It is designed for you to drag and drop the folder into your ~/game/
 # folder.  To invoke this use the following:
 #
-# call screen skip_media("images/movie_name.webm")
+# call screen media_skip("images/movie_name.webm")
 #
 # Media Skip supports the following attributes:
 #
@@ -36,6 +36,17 @@
 #
 # Feel free to contact me on Discord @ HB38
 ###############################################################################
+
+style skip_bar:
+    ysize gui.bar_size
+    left_bar Frame("media_skip/bar_left.webp", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame("media_skip/bar_right.webp", gui.bar_borders, tile=gui.bar_tile)
+    thumb Frame("media_skip/bar_thumb.webp", gui.bar_borders, tile=gui.bar_tile)
+    left_gutter 15
+    right_gutter 5
+    thumb_offset (0,5) #This uses a new addition to the bar that allows for a tuple to be used for an offset (added in Ren'py version X).  Change this to a single integer if you need to backport this to earlier versions of Ren'py, but it will cause a slight transparency artifact during dissolves.
+    bar_invert True
+    # This style contains the image files as well as other settings for the default bar used by the skip screen.  Adjust or replace as needed.
 
 screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95),pos=None):
 
@@ -77,16 +88,16 @@ screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0
 #       fixed:
 #         fit_first True align (0.5, 0.5)
 #         circular_bar:
-#           fore_bar "colorize:media_skip/skip_bar.webp|#ffffff"
-#           aft_bar "colorize:media_skip/skip_bar.webp|#000000"
-#           hover_aft_bar "colorize:media_skip/skip_bar.webp|#ffffff"
+#           fore_bar "colorize:media_skip/circle_bar.webp|#ffffff"
+#           aft_bar "colorize:media_skip/circle_bar.webp|#000000"
+#           hover_aft_bar "colorize:media_skip/circle_bar.webp|#ffffff"
 #           focus_mask True
 #           xysize (97, 97)
-#           thumb "colorize:media_skip/skip_thumb.webp|#ffffff"
-#           hover_thumb "colorize:media_skip/skip_thumb.webp|#ffffff"
+#           thumb "colorize:media_skip/circle_thumb.webp|#ffffff"
+#           hover_thumb "colorize:media_skip/circle_thumb.webp|#ffffff"
 #           thumb_offset absolute(35.2)
-#           start_thumb "colorize:media_skip/skip_thumb.webp|#ffffff"
-#           hover_start_thumb "colorize:media_skip/skip_thumb.webp|#ffffff"
+#           start_thumb "colorize:media_skip/circle_thumb.webp|#ffffff"
+#           hover_start_thumb "colorize:media_skip/circle_thumb.webp|#ffffff"
 #           hide_start_thumb True
 #           bar_invert True
 #           value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
@@ -108,9 +119,9 @@ screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0
        else:
          image "media_skip/mouse_1.webp"
          # The left mouse button being released graphic
-       text _("Skip") yalign 0.5
+       text _("Skip") yalign 0.5 color "#ffffff"
        # The text for the skip button, customize to fit the rest of the theme of your game
-      bar xysize (150,15) value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
+      thumb_bar xysize (150,18) style 'skip_bar' value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
 
       at transform:
        # This transform gives the fade in and out effect as it appears and disappears
