@@ -1,7 +1,9 @@
 # Media Skip for Ren'py
 by HB38
 
-This Project is a drop in library for adding an easy way to skip movies (and music) in Ren'Py. 
+This Project is a drop in library for adding an easy way to skip movies (and music) in Ren'Py.
+
+![skip_movie](https://github.com/HorBro38/media_skip/blob/main/skip_video.gif?raw=true)
 
 ## How to Use
 It is designed for you to drag and drop the folder into your ~/game/ folder.  To invoke this use the following:
