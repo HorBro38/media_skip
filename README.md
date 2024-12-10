@@ -1,7 +1,7 @@
 # Media Skip for Ren'py
 by HB38
 
-This Project is a drop in library for adding an easy way to skip movies (and music) in Ren'Py.
+This Project is a drop in library for adding an easy way to skip movies (and music) in Ren'Py.  Here is an example of the default settings, which can be fully customized to match the style of your game:
 
 ![skip_movie](https://github.com/HorBro38/media_skip/blob/main/skip_video.gif?raw=true)
 
@@ -24,7 +24,11 @@ Media Skip supports the following attributes:
 `pos` - Lets you set specific pixel positions for where the skip text and icons appear.  This will override the align settings (if used).  This is a tuple of integers, the default is `None`.
 
 ## Terms of Use
-Feel free to use this as you desire, credit is not necessary but always appreciated.
+Feel free to use this as you desire, credit is not necessary but always appreciated (feel free to simply credit HB38).
+
+## Optional Extras
+If you've got a copy of [Feniks' circular bars](https://feniksdev.itch.io/circular-bar-for-renpy), you can use the included commented code to swap to that style with ease:
+![skip_ring](https://github.com/HorBro38/media_skip/blob/main/skip_ring.gif?raw=true)
 
 ## Acknowledgements
 Many thanks to Feniks for their assistance (https://feniksdev.com).
