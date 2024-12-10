@@ -28,6 +28,7 @@ Feel free to use this as you desire, credit is not necessary but always apprecia
 
 ## Optional Extras
 If you've got a copy of [Feniks' circular bars](https://feniksdev.itch.io/circular-bar-for-renpy), you can use the included commented code to swap to that style with ease:
+
 ![skip_ring](https://github.com/HorBro38/media_skip/blob/main/skip_ring.gif?raw=true)
 
 ## Acknowledgements
