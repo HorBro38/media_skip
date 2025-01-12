@@ -44,7 +44,7 @@ style skip_bar:
     thumb Frame("media_skip/bar_thumb.webp", gui.bar_borders, tile=gui.bar_tile)
     left_gutter 15
     right_gutter 5
-    thumb_offset (0,5) #This uses a new addition to the bar that allows for a tuple to be used for an offset (added in Ren'py version X).  Change this to a single integer if you need to backport this to earlier versions of Ren'py, but it will cause a slight transparency artifact during dissolves.
+    thumb_offset (0,5) #This uses a new addition to the bar that allows for a tuple to be used for an offset (added in Ren'py version 8.4.0).  Change this to a single integer if you need to backport this to earlier versions of Ren'py, but it will cause a slight transparency artifact during dissolves.
     bar_invert True
     # This style contains the image files as well as other settings for the default bar used by the skip screen.  Adjust or replace as needed.
 
