@@ -10,6 +10,9 @@ It is designed for you to drag and drop the folder into your ~/game/ folder.  To
 
 `call screen media_skip("images/movie_name.webm")`
 
+## Requirements
+This requires Ren'py version 8.4.x+; earlier versions can be used but you will need to adjust the thumb_offset in the style skip_bar from `(0,5)` to `5`.  This will cause some slight transparnecy issues.
+
 ## Attributes
 Media Skip supports the following attributes:
 
@@ -22,6 +25,8 @@ Media Skip supports the following attributes:
 `align` - Lets you manually set the alignment of where the skip text and icons appear.  This is a tuple of floats (x,y), the default is `(0.95,0.95)`.
 
 `pos` - Lets you set specific pixel positions for where the skip text and icons appear.  This will override the align settings (if used).  This is a tuple of integers, the default is `None`.
+
+`image` - Lets you use a standard displayable (an image for example).  This is a boolean, the default is `False`.
 
 ## Terms of Use
 Feel free to use this as you desire, credit is not necessary but always appreciated (feel free to simply credit HB38).
