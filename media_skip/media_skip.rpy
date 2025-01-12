@@ -48,9 +48,12 @@ style skip_bar:
     bar_invert True
     # This style contains the image files as well as other settings for the default bar used by the skip screen.  Adjust or replace as needed.
 
-screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95),pos=None):
+screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0.95,0.95),pos=None,image=False):
 
-  default the_media = Movie(play="{}".format(name), channel='mskip')
+  if image:
+      default the_media = name
+  else:
+    default the_media = Movie(play="{}".format(name), channel='mskip')
 
   default media_length = renpy.music.get_duration(channel='mskip')
   # Keep re-checking to get the length of the movie
