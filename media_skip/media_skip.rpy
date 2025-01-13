@@ -124,7 +124,7 @@ screen media_skip(name,hold_time=2.0,show_time=2.0,override_length=None,align=(0
          # The left mouse button being released graphic
        text _("Skip") yalign 0.5 color "#ffffff"
        # The text for the skip button, customize to fit the rest of the theme of your game
-      thumb_bar xysize (150,18) style 'skip_bar' value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
+      bar xysize (150,18) style 'skip_bar' value AnimatedValue(value=held_time, range=hold_time, delay=0.1, old_value=None)
 
       at transform:
        # This transform gives the fade in and out effect as it appears and disappears
