@@ -1,7 +1,7 @@
 # Media Skip for Ren'py
 by HB38
 
-This Project is a drop in library for adding an easy way to skip movies (and music) in Ren'Py.  Here is an example of the default settings, which can be fully customized to match the style of your game:
+This Project is a drop in library for adding an easy way to have media play (movies, music, images) for a set duration before continuing while still allowing the player to skip.  Here is an example of the default settings, which can be fully customized to match the style of your game:
 
 ![skip_movie](https://github.com/HorBro38/media_skip/blob/main/skip_video.gif?raw=true)
 
@@ -20,7 +20,7 @@ Media Skip supports the following attributes:
 
 `show_time` - This is the length of time the "skip" screen will show over the media when initially shown.  If the user does not interact with it, it will hide after this many seconds.  This is a float, the default is `2.0`.
 
-`override_length` - You can use this attribute to manually set the time the skip screen will display, if you don't want to automatically get it from the media.  This is a float, the default is `None`.
+`override_length` - By default, Media Skip will take the duration of the media (Movie, Music) and use that as the duration the screen should show.  You can use this attribute to manually set the time the skip screen will display, if you don't want to automatically get it from the media.  This is a float, the default is `None`.
 
 `align` - Lets you manually set the alignment of where the skip text and icons appear.  This is a tuple of floats (x,y), the default is `(0.95,0.95)`.
 
