@@ -11,7 +11,7 @@ It is designed for you to drag and drop the folder into your ~/game/ folder.  To
 `call screen media_skip("images/movie_name.webm")`
 
 ## Requirements
-This requires Ren'py version 8.4.x+; earlier versions can be used but you will need to adjust the thumb_offset in the style skip_bar from `(0,5)` to `5`.  This will cause some slight transparnecy issues.
+This requires Ren'py version 8.4.x+; earlier versions can be used but you will need to adjust the thumb_offset in the style skip_bar from `(0,5)` to `5`.  This will cause some slight transparency issues.
 
 ## Attributes
 Media Skip supports the following attributes:
@@ -35,6 +35,9 @@ Feel free to use this as you desire, credit is not necessary but always apprecia
 If you've got a copy of [Feniks' circular bars](https://feniksdev.itch.io/circular-bar-for-renpy), you can use the included commented code to swap to that style with ease:
 
 ![skip_ring](https://github.com/HorBro38/media_skip/blob/main/skip_ring.gif?raw=true)
+
+## Troubleshooting
+If you get an error of `TypeError: bad operand type for abs(): tuple` it means you are using a version earlier than 8.4 - Please see the instructions above under "Requirements" to resolve.
 
 ## Acknowledgements
 Many thanks to Feniks for their assistance (https://feniksdev.com).
